@@ -1,0 +1,115 @@
+
+// Admin Layout (ALUI)
+// @author: WrapTheme ( https://themeforest.net/user/wrraptheme )
+// @design by: ThemeMakker Infotech LLP.
+// @event-namespace: ALUI
+// Copyright 2021 WrapTheme
+
+[class="theme-orange"] {
+    --primary-color: #ec7056;
+    --secondary-color:#ECBB56;
+}
+
+[data-theme="dark"] {
+    [class="theme-orange"] {
+        --primary-color: #ec7056;
+        --secondary-color:#ECBB56;
+    }
+}
+
+[data-theme="high-contrast"] {
+    .text-white{
+        color: var(--black-color) !important;
+    }
+    .text-light{
+        color: var(--black-color) !important;
+    }
+    .menu-grid{
+        li{
+            .m-link{
+                color: var(--color-700);
+                &.active{
+                    color: var(--black-color);
+                }
+            }
+        }
+    }
+    .btn-check:checked+.btn-outline-primary,
+    .btn.btn-outline-primary:hover{
+        color: var(--color-100);
+    }
+}
+
+body{
+    font-size: 15px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;  // IE 10+
+    scrollbar-width: none; // Firefox
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    // Track /
+    &::-webkit-scrollbar-track {
+        background: var(--dark-color);
+    }    
+    // Handle /
+    &::-webkit-scrollbar-thumb {
+        background: linear-gradient(-45deg, var(--secondary-color), var(--primary-color));
+    }
+    .btn-check:checked+.btn-outline-primary{
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+
+    // RTL
+    &.rtl_mode{
+        .footer-link,
+        .address{
+            padding-left: 0;
+            padding-right: 1.5rem;
+        }
+        @media (min-width: 992px){
+            .text-lg-end {
+                text-align: left !important;
+            }
+        }
+    }
+}
+#mainDiv{
+    background: var(--body-color);
+}
+.lp-menu {
+    .nav-link {
+        color: var(--color-700);
+    }
+    .navbar-toggler-icon{
+        color: var(--color-700);
+        font-size: 22px;
+        line-height: 34px;
+    }
+}
+
+// ==============================================================
+
+.section {
+    padding: 80px 0;
+   
+    &.footer{
+        .footer-link {
+            line-height: 30px;
+            a {
+                color: var(--color-500);
+                &:hover {
+                    color: var(--primary-color);
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 992px) {
+        padding: 40px 0;
+    }
+}

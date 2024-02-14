@@ -1,0 +1,29 @@
+// Global
+@import "../scss/global/fonts";
+@import "../scss/global/variables";
+@import "../scss/global/themes";
+@import "../scss/global/mixins";
+
+// Bootstrap 5
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+@import "../scss/global/general";
+@import "../scss/global/rtl-mode";
+@import "../scss/global/high-contrast";
+
+// Dynamic Color scss
+@import "assets/plugin/colorpicker/colorpicker.min.scss";
+
+// Custom Bootstrap Components
+@import "../scss/bootstrap/custom";
+
+// Generic
+@import "../scss/generic/helpers";
+@import "../scss/generic/animate";
+@import "../scss/generic/setting-bar";
+@import "../scss/generic/auth";
+
+// Application widgets
+@import "../scss/plugin/timeline";
+@import "../scss/widgets/card";
+@import "../scss/widgets/table";

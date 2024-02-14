@@ -1,0 +1,157 @@
+// Admin Layout (ALUI)
+// @author: WrapTheme ( https://themeforest.net/user/wrraptheme )
+// @design by: ThemeMakker Infotech LLP.
+// @event-namespace: ALUI
+// Copyright 2021 WrapTheme
+
+
+#mainDiv {
+    background-color: var(--body-color);
+	overflow: hidden;
+	height: 100vh;
+	@media (max-width: 1025px) {
+		height: auto;
+	}
+}
+
+.hero{
+	.hero-illustration {
+		position: relative;
+		padding-top: 40px;
+		padding-bottom: 40px;
+		right: -40px;
+		img,
+		svg {
+			overflow: visible
+		}
+		&:before {
+			background: linear-gradient(to bottom, var(--secondary-color) 0, var(--primary-color) 100%);
+			content: '';
+			position: absolute;
+			left: -150px;
+			right: 0;
+			top: 0;
+			bottom: -300px;
+		}
+		.hero-illustration-browser {
+			position: relative;
+		
+			svg {
+				height: auto;
+				margin-left: auto;
+				width: 100%;
+				@media (min-width: 641px) {
+					width: 640px;
+				}
+			}
+			
+			@media (max-width: 1025px) {
+				left: -70px;
+			}
+			@media (max-width: 641px) {
+				left: -40px;
+			}
+		}
+		.hero-ball,
+		.hero-squares {
+			position: absolute;
+		}
+
+		.hero-squares-1 {
+			top: 16px;
+			left: -24px;
+		}
+
+		.hero-ball-1 {
+			display: none;
+		}
+
+		.hero-ball-2 {
+			top: 208px;
+			left: -40px;
+			svg {
+				height: auto;
+				width: 104px;
+			}
+			@media (min-width: 641px) {
+				top: 294px;
+				left: -64px;
+				svg {
+					width: 150px;
+					height: auto;
+				}
+			}
+		}
+		@media (min-width: 641px) {
+			right: -80px;
+		}
+	}
+}
+
+footer {
+    z-index: 9;
+}
+
+@media (min-width: 1025px) {
+
+	.site-header-large-bg {
+		position: relative;
+
+        span {
+            position: absolute;
+            top: -24px;
+            bottom: 0;
+            left: 648px;
+            width: 9999px;
+            height: 100vh;
+            background: linear-gradient(to bottom, var(--secondary-color) 0, var(--primary-color) 100%);
+            background-repeat: no-repeat
+        }
+	}
+
+	.hero {
+		text-align: left;
+		padding-top: 80px;
+		padding-bottom: 80px;
+		width: 100%;
+
+        &:before {
+            top: -80px;
+            left: 620px;
+            height: 100vh;
+            width: 100%
+        }
+		.hero-inner {
+			display: flex;
+			.hero-illustration {
+				right: 0;
+				padding: 0;
+				&:before {
+					content: normal
+				}
+				.hero-illustration-browser {
+					svg {
+						width: 800px;
+					}
+				}
+				.hero-ball-1 {
+					display: block;
+					top: -190px;
+					left: 417px;
+				}
+				.hero-ball-2 {
+					top: 335px;
+					left: -64px;
+					svg {
+						width: 200px;
+						height: auto;
+					}
+				}
+				.hero-squares-1 {
+					top: -88px;
+					left: 72px;
+				}	
+			}
+		}
+	}
+}

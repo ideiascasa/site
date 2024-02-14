@@ -1,0 +1,108 @@
+
+// Admin Layout (ALUI)
+// @author: WrapTheme ( https://themeforest.net/user/wrraptheme )
+// @design by: ThemeMakker Infotech LLP.
+// @event-namespace: ALUI
+// Copyright 2021 WrapTheme
+
+
+[data-theme="high-contrast"] {
+    .text-white{
+        color: var(--black-color) !important;
+    }
+    .text-light{
+        color: var(--black-color) !important;
+    }
+    .menu-grid{
+        li{
+            .m-link{
+                color: var(--color-700);
+                &.active{
+                    color: var(--black-color);
+                }
+            }
+        }
+    }
+}
+
+body{
+    font-size: 15px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;  // IE 10+
+    scrollbar-width: none; // Firefox
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    // Track /
+    &::-webkit-scrollbar-track {
+        background: var(--dark-color);
+    }    
+    // Handle /
+    &::-webkit-scrollbar-thumb {
+        background: linear-gradient(-45deg, var(--secondary-color), var(--primary-color));
+    }
+
+    &.rtl_mode{
+        .footer-link,
+        .address{
+            padding-left: 0;
+            padding-right: 1.5rem;
+        }
+        @media (min-width: 992px){
+            .text-lg-end {
+                text-align: left !important;
+            }
+        }
+    }
+}
+#mainDiv{
+    background: var(--body-color);
+}
+// ==============================================================
+.lp-menu {
+    .nav-link {
+        color: var(--color-700);
+    }
+    .navbar-toggler-icon{
+        color: var(--color-700);
+        font-size: 22px;
+        line-height: 34px;
+    }
+}
+.crypto-partner{
+    border: 1px solid var(--border-color);
+}
+.section {
+    padding: 80px 0;
+   
+    &.hero-area{
+        border-bottom: 5px solid var(--primary-color);
+    }
+    &.update-coin{
+        margin-top: -150px;
+        .color-100{
+            background-color: var(--color-100);
+        }
+    }
+    &.call-action{
+        margin-top: 80px;
+        .call-img{
+            margin-top: -195px;
+        }
+    }
+    &.footer{
+        .footer-link {
+            line-height: 30px;
+            font-size: 15px;
+            a {
+                color: var(--color-500);
+                &:hover {
+                    color: var(--primary-color);
+                }
+            }
+        }
+    }
+}

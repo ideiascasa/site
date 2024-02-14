@@ -1,0 +1,28 @@
+// Select2
+.select2-container {
+	height: 39px;
+	.select2-choice {
+		height: auto;
+		border: none;
+		background: none;
+        position: absolute;
+		padding: 5px 10px;
+		line-height: 27px;
+		top: 0;
+		left: 0;
+		width: 100%;
+
+		>.select2-chosen {
+			margin: 0;
+		}
+		.select2-arrow {
+			display: none;
+		}
+	}
+}
+.select2-drop-active {
+	border-color: var(--border-color);
+}
+.parsley-required {
+	color: red;
+}

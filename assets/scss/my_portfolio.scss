@@ -1,0 +1,260 @@
+// Admin Layout (ALUI)
+// @author: WrapTheme ( https://themeforest.net/user/wrraptheme )
+// @design by: ThemeMakker Infotech LLP.
+// @event-namespace: ALUI
+// Copyright 2021 WrapTheme
+
+
+body{
+    &.rtl_mode{
+        .swiper-container{
+            direction: ltr;
+            text-align: left;
+        }
+        .accordion-button::after{
+            margin-right: auto;
+            margin-left: unset;
+        }
+    }
+    .sticky-content {
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+    }
+}
+
+#mainDiv{
+    background-color: var(--body-color);
+    padding: 0 1rem;
+}
+
+// ==============================================================
+// menu bar
+.section{
+    
+    // Custom Navbar
+    &.custom-navbar {
+        padding-top: 50px;
+        width: 100%;
+        .navbar-brand {
+            color: var(--color-900);
+        }
+        .burger {
+            cursor: pointer;
+            position: relative;
+            width: 28px;
+            height: 32px;
+        
+            span {
+                top: 15px;
+            }
+        
+            &:before,
+            span,
+            &:after {
+                background: var(--color-900);
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                border-radius: 2px;
+                opacity: 1;
+            }
+            &:before {
+                top: 4px;
+            }
+            &:after {
+                top: 26px;
+            }    
+            &:hover{
+                &:before {
+                    top: 7px;
+                }
+                &:after {
+                    top: 23px;
+                }
+            }
+            &.active {
+                span {
+                    opacity: 0;
+                }
+                &:before,
+                &:after {
+                    top: 40%;
+                }
+                &:before {
+                    transform: rotate(45deg);
+                }
+                &:after {
+                    transform: rotate(-45deg);
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+            &:before,
+            &:after {
+                transition: top 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+                transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+                opacity 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+                background-color 1.15s cubic-bezier(0.86, 0, 0.07, 1);
+                -webkit-transition: top 0.35s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+                opacity 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+                background-color 1.15s cubic-bezier(0.86, 0, 0.07, 1);
+                content: "";
+            }
+        }
+    }
+    &.site-portfolio{
+        .filters {
+            a {
+                color: var(--color-500);
+                text-decoration: none;
+                display: inline-block;
+                position: relative;
+                padding-left: 10px;
+                padding-right: 10px;
+        
+                &:hover,
+                &:focus,
+                &:active,
+                &.active {
+                    text-decoration: none;
+                    color: var(--primary-color);
+        
+                    &:before {
+                        background-color: var(--primary-color);
+                        content: "";
+                        position: absolute;
+                        left: 10px;
+                        right: 10px;
+                        bottom: -3px;
+                        height: 3px;
+                    }
+                }
+            }
+        }
+        .item {
+            border: none;
+        
+            .item-wrap {
+                display: block;
+                position: relative;
+                overflow: hidden;
+        
+                &:after {
+                    background: rgba(var(--primary-rgb), 0.9);
+                    position: absolute;
+                    visibility: hidden;
+                    content: "";
+                    transition: .3s all ease-in-out;
+                    z-index: 2;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    opacity: 0;
+                }
+                img {
+                    transition: .3s transform ease;
+                    transform: scale(1);
+                }
+                > .work-info {
+                    color: var(--white-color);
+                    position: absolute;
+                    visibility: hidden;
+                    transition: .3s all ease;
+                    top: 50%;
+                    width: 100%;
+                    z-index: 3;
+                    transform: translateY(-50%);
+                    opacity: 0;            
+                }
+                &:hover {
+                    text-decoration: none;
+                    visibility: visible;
+                    opacity: 1;
+        
+                    .work-info {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+        
+                    &:after {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+        
+                    img {
+                        transform: scale(1.05);
+                    }
+                    
+                }
+            }
+        }
+    }
+    &.testimonials{
+        .testimonials-slider {
+            .testimonial-wrap {
+                background: var(--primary-color);
+                color: var(--white-color);
+                padding: 50px 50px 80px 50px;
+            
+                .testimonial {
+                    text-align: center;
+                    margin: 0 auto;
+                    max-width: 500px;
+            
+                    img {
+                        border-radius: 50%;
+                        width: 120px;
+                        margin: 0 auto 30px auto;
+                    }
+                }
+            }
+            .swiper-pagination {
+                position: relative;
+                margin-top: -60px;
+        
+                .swiper-pagination-bullet {
+                    width: 12px;
+                    height: 12px;
+                    background-color: rgba(13, 30, 45, 0.3);
+                    opacity: 1;
+                }
+                .swiper-pagination-bullet-active {
+                    background-color: rgba(13, 30, 45, 0.6);
+                }
+            }
+        }
+    }
+    &.services {
+        .service-list:hover{
+            .avatar{
+                transition: .3s all ease;
+                border-color: var(--primary-color);
+                background-color: var(--primary-color);
+                color: var(--white-color);
+            }
+        }
+    }
+    &.footer {
+        a {
+            color: var(--color-500);
+        }
+        .social {
+            a {
+                color: var(--color-500);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+        
+                &:hover {
+                    color: var(--primary-color);
+                }
+            }
+        }
+    }
+}

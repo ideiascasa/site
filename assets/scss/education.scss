@@ -1,0 +1,299 @@
+// Admin Layout (ALUI)
+// @author: WrapTheme ( https://themeforest.net/user/wrraptheme )
+// @design by: ThemeMakker Infotech LLP.
+// @event-namespace: ALUI
+// Copyright 2021 WrapTheme
+
+
+[data-theme="high-contrast"] {
+    .text-white{
+        color: var(--black-color) !important;
+    }
+}
+
+// Back to top button
+.back-to-top {
+    background: var(--primary-color);
+    color: var(--white-color);
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    transition: all 0.4s;
+
+    &:hover {
+        background: var(--secondary-color);
+    }
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+body{
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;  // IE 10+
+    scrollbar-width: none; // Firefox
+    font-size: 15px;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    // Track /
+    &::-webkit-scrollbar-track {
+        background: var(--dark-color);
+    }    
+    // Handle /
+    &::-webkit-scrollbar-thumb {
+        background: linear-gradient(-45deg, var(--secondary-color), var(--primary-color));
+    }
+
+    &.rtl_mode{
+        .sponsors{
+            direction: ltr;
+            text-align: left;
+        }
+    }
+}
+
+// ==============================================================
+.section{
+    background: var(--body-color);
+    
+    &.header-top{
+        background: var(--card-color);
+        border-bottom: 1px solid var(--border-color);
+    }
+    &.header{
+        background: var(--body-color);
+        position: relative;
+
+        .navbar {
+            background: var(--card-color);
+
+            .nav-link{
+                font-size: 1.1rem;
+                &.active{
+                    color: var(--primary-color);
+                }
+            }
+            .dropdown-menu{
+                width: 280px;
+            }
+        }
+    
+        .navbar-brand{
+            color: var(--color-900);
+            small{
+                font-size: 14px;
+                letter-spacing: 2px;
+            }
+        }
+        .banner-text{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 138px);
+            z-index: 10;
+    
+            @media (max-width: 1024px) {
+                height: auto;
+                padding: 80px 0;
+            }
+            @media (max-width: 767px) {
+                text-align: center;
+                padding: 40px 0;
+            }
+        }
+    }
+
+    &.aboutus,
+    &.how-it,
+    &.whychoose,
+    &.sponsors,
+    &.team,
+    &.call-action{
+        padding: 80px 0;
+
+        @media (max-width: 1024px) {
+            padding: 60px 0;
+        }
+        @media (max-width: 767px) {
+            padding: 40px 0;
+        }
+    }
+
+    &.call-action{
+        background-image: url(../../assets/images/applanding/cat-bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        position: relative;
+        z-index: 2;
+
+        &:before {
+            background: var(--dark-color);
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: .9;
+            z-index: -1;
+        }
+    }
+
+    &.whychoose{
+        .span-img{
+            display: inline-block;
+
+            img{
+                position: relative;
+                z-index: 99;
+            }
+            &::after{
+                background-color: var(--primary-color);
+                content: '';
+                position: absolute;
+                bottom: -20px;
+                right: -20px;
+                width: 90%;
+                height: 90%;
+                @media (max-width: 767px) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &.sponsors{
+        .tns-outer{
+            overflow: hidden;
+        }
+        .tns-liveregion{
+            display: none;
+        }
+        .single-client {
+            display: inline-block;
+            margin-top: 30px;
+            margin-right: 20px;
+            width: 17%;
+            &:last-child {
+                margin-right: 0;
+            }
+            img {
+                -webkit-transition: all 0.4s ease-in-out;
+                transition: all 0.4s ease-in-out;
+                width: 90%;
+                filter: grayscale(100%);
+                -webkit-filter: grayscale(100%);
+                -moz-filter: grayscale(100%);
+                
+                &:hover {
+                    -webkit-filter: grayscale(0);
+                    -moz-filter: grayscale(0);
+                    filter: grayscale(0);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    &.team{
+        .card{
+            position: relative;
+            transition: box-shadow 0.35s ease;
+            overflow: hidden;
+            &:before {
+                content: "";
+                display: block;
+                width: 100%;
+                padding-bottom: 120%;
+            }
+            .team-block{
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                .team-img{
+                    flex: 4 0 auto;
+                    background-position: top;
+                    background-size: cover;
+                    transform: scale(1.2);
+                    transition: transform 0.35s ease;
+                }
+                .team-content {
+                    background-color: var(--card-color);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex: 0 0 0;
+                    overflow: hidden;
+                    transition: flex-grow 0.35s ease;
+                }
+                .team-caption {
+                    color: var(--color-500);
+                    overflow: hidden;
+                    opacity: 0;
+                    transform: scale(0.5) translateY(100%);
+                    transition: opacity 0.35s linear, transform 0.35s ease;
+                }
+            }
+            &:hover{
+                transform: scale(1);
+                .team-img{
+                    transform: scale(1);
+                }
+                .team-content {
+                    flex-grow: 1;
+                }
+                .team-caption {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &.contactus{
+        background-color: var(--card-color);
+        padding: 100px 0;
+    }
+
+    &.blog{
+        padding: 100px 0;
+    }
+
+    &.footer{
+        .footer-top{
+            color: var(--color-400);
+        }
+        .footer-link{
+            list-style: square;
+            line-height: 36px;
+            font-size: 1rem;
+            li a{
+                color: var(--color-500);
+                &:hover{
+                    color: var(--primary-color);
+                }
+            }
+        }
+        .address{
+            line-height: 26px;
+            font-size: 15px;
+        }
+    }
+}

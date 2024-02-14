@@ -1,0 +1,11 @@
+{
+  "name": "site",
+  "version": "0.1.0",
+  "author": "Davi Saranszky Mesquita",
+  "license": "MIT",
+  "website": "https://ideias.casa",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ideiascasa/site.git"
+  }
+}
